@@ -1,7 +1,10 @@
 <template>
   <div class="hello">
     <h6>{{ msg }}</h6>
-    <input type="file" id="file" name="file" multiple="multiple" accept="image/*"/>
+    <van-button type="primary">主要按钮</van-button>
+    <div>
+      <input type="file" id="file" name="file" multiple="multiple" accept="image/*"/>
+    </div>
   </div>
 </template>
 
@@ -42,8 +45,6 @@ export default {
 </script>
 <style scoped lang="less">
   .hello{
-    background: #f40;
     width:100%;
-    height:100%;
   }
 </style>
