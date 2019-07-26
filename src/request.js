@@ -54,6 +54,7 @@ let filterUrl = _url => {
     baseUrl = "";
   }
   if (_url && _url.startsWith("http")) {
+    console.log('进来了这个判断条件吗http')
     return _url;
   }
   return baseUrl + _url;
@@ -61,16 +62,22 @@ let filterUrl = _url => {
 
 export default {
   get(_url, _params = {}) {
-    var header = {
-      "Content-Type": "application/json;charset=UTF-8",
-    };
+    // var header = {
+    //   "Content-Type": "application/json;charset=UTF-8",
+    // };
     console.log("网址", filterUrl(_url));
     return new Promise((resolve, reject) => {
       axios({
+        credentials: 'include',
         url: filterUrl(_url),
         method: "get",
         data: _params,
-        headers: header
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        mode: "cors",
+        cache: "force-cache"
       })
         .then(res => {
           console.log('数据',res.data)

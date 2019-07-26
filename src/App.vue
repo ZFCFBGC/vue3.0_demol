@@ -1,26 +1,15 @@
 <template>
   <div id="app">
-    <HelloWorld msg="Welcome" />
-    <Reference :toChildMsg="cardNumber" />
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-import Reference from "./components/reference.vue";
 export default {
   name: "app",
-  components: {
-    HelloWorld,
-    Reference
-  },
+  components: {},
   data() {
-    return {
-      cardNumber: {
-        gqg: 123,
-        mwc: 234
-      }
-    };
+    return {};
   }
 };
 </script>

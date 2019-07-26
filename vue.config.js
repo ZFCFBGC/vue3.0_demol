@@ -12,7 +12,8 @@ module.exports = {
     disableHostCheck: true,
     https: false,
     hotOnly: false,
-    proxy: "http://elm.cangdu.org",
+    proxy: null,
+    //"http://elm.cangdu.org",
     // {
     //   "^/api": {
     //     target: "<http://elm.cangdu.org>",
