@@ -1,21 +1,20 @@
 <template>
   <div class="hello">
-    <h6>测试</h6>
-    <div id="allmap"></div>
+    <h2>测试百度api获取当前地址和当前经纬度</h2>
+    <div class="address">当前详细地址:{{address}}</div>
+    <div class="lng">经度:{{lng}}</div>
+    <div class="lat">纬度:{{lat}}</div>
+    <div id="allmap" style="display:none"></div>
   </div>
 </template>
 
 <script>
 export default {
-  props: {
-    msg: String
-  },
   data() {
     return {
-      offset: 0,
-      limit: 20,
-      urls: "",
-      fil: ""
+      address:'',
+      lng:'',
+      lat:''
     };
   },
   created() {
@@ -26,6 +25,7 @@ export default {
   },
   methods: {
     addressDetail() {
+      var that = this
       var map = new BMap.Map("allmap");
       var point = new BMap.Point(116.331398, 39.897445);
       map.centerAndZoom(point, 12);
@@ -38,21 +38,12 @@ export default {
             map.addOverlay(mk);
             map.panTo(r.point);
             console.log("您的位置：" + r.point.lng + "," + r.point.lat);
+            that.lng = r.point.lng
+            that.lat = r.point.lat
             var pt = r.point;
             geoc.getLocation(pt, function(rs) {
               console.log('rs',rs)
-              // var addComp = rs.addressComponents;
-              // alert(
-              //   addComp.province +
-              //     ", " +
-              //     addComp.city +
-              //     ", " +
-              //     addComp.district +
-              //     ", " +
-              //     addComp.street +
-              //     ", " +
-              //     addComp.streetNumber
-              // );
+              that.address = rs.address
             });
           } else {
             alert("failed" + this.getStatus());
@@ -77,13 +68,15 @@ export default {
 <style scoped lang="less">
 .hello {
   width: 100%;
-  margin: 40px;
-}
-#images {
-  display: block;
-  border: 1px solid #ccc;
-  width: 40px;
-  height: 40px;
+  height:100%;
+  box-sizing: border-box;
+  h2{
+    font-size: 0.16rem;
+    text-align: center;
+  }
+  div{
+    margin-top:0.16rem;
+  }
 }
 #allmap {
   width: 100px;

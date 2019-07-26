@@ -44,7 +44,7 @@ Vue.prototype.$axios = axios;
 Vue.config.productionTip = false;
 var vConsole = new VConsole();
 console.log('Hello world',vConsole);
-// import '@/rem.js'
+import '@/rem.js'
 new Vue({
   router,
   render: h => h(App)

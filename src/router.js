@@ -3,7 +3,7 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-import HelloWorld from './components/HelloWorld.vue'
+import Address from './components/address.vue'
 import Login from './pages/login.vue'
 import Home from './pages/index.vue'
 import AddGoods from './pages/addGoods.vue'
@@ -83,9 +83,9 @@ const router = new Router({
 			component: Login,
     },
     {
-      path:'/demol',
-			name:'HelloWorld',
-			component: HelloWorld,
+      path:'/address',
+			name:'Address',
+			component: Address,
     },
     {
       path:'/info',
