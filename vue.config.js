@@ -5,6 +5,7 @@ module.exports = {
   outputDir: "dist",
   assetsDir: "assets", // 静态资源目录 (js, css, img, fonts)
   productionSourceMap: false, // 生产环境 sourceMap
+  lintOnSave:false,//关闭eslint
   devServer: {
     open: process.platform === "darwin",
     host: "0.0.0.0", // can be overwritten by process.env.HOST
@@ -12,21 +13,7 @@ module.exports = {
     disableHostCheck: true,
     https: false,
     hotOnly: false,
-    proxy: null,
-    //"http://elm.cangdu.org",
-    // {
-    //   "^/api": {
-    //     target: "<http://elm.cangdu.org>",
-    //     ws: true,
-    //     changeOrigin: true,
-    //     pathRewrite: {
-    //       "^/api": ""
-    //     }
-    //   },
-    //   "^/foo": {
-    //     target: "<other_url>"
-    //   }
-    // }, // 设置代理
+    proxy: "http://elm.cangdu.org",
     before: app => {}
   }
 };
