@@ -12,9 +12,9 @@
 export default {
   data() {
     return {
-      address:'',
-      lng:'',
-      lat:''
+      address: "",
+      lng: "",
+      lat: ""
     };
   },
   created() {
@@ -25,7 +25,7 @@ export default {
   },
   methods: {
     addressDetail() {
-      var that = this
+      var that = this;
       var map = new BMap.Map("allmap");
       var point = new BMap.Point(116.331398, 39.897445);
       map.centerAndZoom(point, 12);
@@ -38,12 +38,12 @@ export default {
             map.addOverlay(mk);
             map.panTo(r.point);
             console.log("您的位置：" + r.point.lng + "," + r.point.lat);
-            that.lng = r.point.lng
-            that.lat = r.point.lat
+            that.lng = r.point.lng;
+            that.lat = r.point.lat;
             var pt = r.point;
             geoc.getLocation(pt, function(rs) {
-              console.log('rs',rs)
-              that.address = rs.address
+              console.log("rs", rs);
+              that.address = rs.address;
             });
           } else {
             alert("failed" + this.getStatus());
@@ -68,14 +68,14 @@ export default {
 <style scoped lang="less">
 .hello {
   width: 100%;
-  height:100%;
+  height: 100%;
   box-sizing: border-box;
-  h2{
+  h2 {
     font-size: 0.16rem;
     text-align: center;
   }
-  div{
-    margin-top:0.16rem;
+  div {
+    margin-top: 0.16rem;
   }
 }
 #allmap {

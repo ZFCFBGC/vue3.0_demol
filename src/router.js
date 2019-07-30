@@ -3,6 +3,7 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
+import List from './components/list.vue'
 import Address from './components/address.vue'
 import Login from './pages/login.vue'
 import Home from './pages/index.vue'
@@ -19,6 +20,7 @@ import UserList from './pages/userList.vue'
 import AdminList from './pages/adminList.vue'
 import Manage from './pages/manage.vue'
 import Info from './pages/info.vue'
+
 const router = new Router({
   linkActiveClass: 'active',
   routes: [
@@ -91,6 +93,10 @@ const router = new Router({
       path:'/info',
 			name:'Info',
 			component: Info,
+    },{
+      path:'/list',
+			name:'List',
+			component: List,
     }
   ]
 })
