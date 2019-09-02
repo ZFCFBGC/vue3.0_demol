@@ -48,20 +48,20 @@ export default {
         this.info = "用户名和密码不能为空";
       } else {
         this.$request
-          .post("/admin/login", {user_name: this.username, password: this.password})
+          .post("/index.php", {username: this.username, password: this.password,client:'wap'})
           .then(res => {
             console.log("登陆返回", res);
-            if(res.status==1){
-              window.sessionStorage.setItem('key', '13838384388');
-              this.$router.push({
-                path: "/"
-              });
-            }else{
-              this.dialogVisible = true;
-              this.info = res.message;
-              this.username = "";
-              this.password = "";
-            }
+            // if(res.status==1){
+            //   window.sessionStorage.setItem('key', '13838384388');
+            //   this.$router.push({
+            //     path: "/"
+            //   });
+            // }else{
+            //   this.dialogVisible = true;
+            //   this.info = res.message;
+            //   this.username = "";
+            //   this.password = "";
+            // }
           });
       }
     },

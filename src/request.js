@@ -4,6 +4,8 @@ axios.defaults.headers.post["Content-Type"] = "application/json;charset=UTF-8";
 // 超时时间
 axios.defaults.timeout = 10000;
 
+let cancel, promiseArr = {}
+
 // 自定义拦截器
 axios.interceptors.request.use(
   config => {
@@ -11,6 +13,15 @@ axios.interceptors.request.use(
     // requestList.includes(request)
     //   ? console.log("取消重复请求")
     //   : requestList.push(request);
+
+    //发起请求时，取消掉当前正在进行的相同请求
+    // if (promiseArr[config.url]) {
+    //   promiseArr[config.url]('操作取消')
+    //   promiseArr[config.url] = cancel
+    // } else {
+    //   promiseArr[config.url] = cancel
+    // }
+
 
     // 判断登录状态
     const sessionid = window.localStorage.getItem("sesstion");
@@ -59,12 +70,8 @@ let filterUrl = _url => {
   }
   return baseUrl + _url;
 };
-
 export default {
   get(_url, _params = {}) {
-    // var header = {
-    //   "Content-Type": "application/json;charset=UTF-8",
-    // };
     console.log("网址", filterUrl(_url));
     return new Promise((resolve, reject) => {
       axios({

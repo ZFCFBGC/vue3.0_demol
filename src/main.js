@@ -7,9 +7,8 @@ import VConsole from 'vconsole/dist/vconsole.min.js'
 import "./assets/css/global.css";
 import "./assets/css/main.less";
 
-// import 'vant/lib/index.css';
-// import { Button } from 'vant'
-// Vue.use(Button)
+import VueScroller from "vue-scroller"
+Vue.use(VueScroller);
 import "element-ui/lib/theme-chalk/index.css";
 import {
   Button,
@@ -21,10 +20,14 @@ import {
   Icon,
   Row,
   Col,
+  Select,
+  Option,
   Dropdown,
   DropdownMenu,
   DropdownItem,
-  MenuItemGroup
+  MenuItemGroup,
+  Table,
+  TableColumn
 } from "element-ui";
 Vue.use(Button);
 Vue.use(Input);
@@ -39,6 +42,10 @@ Vue.use(Dropdown)
 Vue.use(DropdownMenu)
 Vue.use(DropdownItem)
 Vue.use(MenuItemGroup)
+Vue.use(Table)
+Vue.use(TableColumn)
+Vue.use(Select)
+Vue.use(Option)
 Vue.prototype.$request = request;
 Vue.prototype.$axios = axios;
 Vue.config.productionTip = false;

@@ -65,6 +65,7 @@
   </div>
 </template>
 <script>
+import tween from '@/plugins/tween.js'
 export default {
   data(){
     return {
@@ -75,6 +76,7 @@ export default {
     var min = document.body.offsetHeight+'px'
     this.min_height = { height:min,overflow:'auto'}
     console.log('屏幕',document.body.offsetHeight)
+    console.log('tween',tween,tween.Quart)
   },
   methods: {
     gopath(path) {

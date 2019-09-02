@@ -1,6 +1,9 @@
 <template>
   <div class="manage">
     <head-top :toChildMsg="title"></head-top>
+    <bottom-tab>
+      <div class="demol">123456</div>
+    </bottom-tab>
     <div class="content">
       <h2>数据统计</h2>
       <div class="datas">
@@ -22,6 +25,7 @@
 </template>
 <script>
 import headTop from "../components/headTop.vue";
+import bottomTab from "../components/bottomTab.vue";
 export default {
   data() {
     return {
@@ -32,7 +36,8 @@ export default {
     };
   },
   components: {
-    headTop
+    headTop,
+    bottomTab
   },
   created() {},
   mounted() {},

@@ -4,6 +4,12 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 import List from './components/list.vue'
+import Scroller from './components/scroller.vue'
+import Scroll from './components/scroll/scroll.vue'
+import Swipers from './components/gqg_swiper/swiper.vue'
+import Swipers1 from './components/gqg_swiper/swiper1.vue'
+import Swipers2 from './components/gqg_swiper/swiper2.vue'
+import Demol from './components/bottomTab.vue'
 import Address from './components/address.vue'
 import Login from './pages/login.vue'
 import Home from './pages/index.vue'
@@ -20,7 +26,6 @@ import UserList from './pages/userList.vue'
 import AdminList from './pages/adminList.vue'
 import Manage from './pages/manage.vue'
 import Info from './pages/info.vue'
-
 const router = new Router({
   linkActiveClass: 'active',
   routes: [
@@ -97,6 +102,30 @@ const router = new Router({
       path:'/list',
 			name:'List',
 			component: List,
+    },{
+      path:'/scroller',
+			name:'Scroller',
+			component: Scroller,
+    },{
+      path:'/scroll',
+			name:'Scroll',
+			component: Scroll,
+    },{
+      path:'/swipers',
+			name:'Swipers',
+			component: Swipers,
+    },{
+      path:'/swipers1',
+			name:'Swipers1',
+			component: Swipers1,
+    },{
+      path:'/swipers2',
+			name:'Swipers2',
+			component: Swipers2,
+    },{
+      path:'/demol',
+			name:'Demol',
+			component: Demol,
     }
   ]
 })
