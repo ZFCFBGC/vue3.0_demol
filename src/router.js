@@ -2,7 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 Vue.use(Router)
-
+import tool from "./assets/js/tools.js"
+console.log('测试引入1',tool)
 import List from './components/list.vue'
 import Scroller from './components/scroller.vue'
 import Scroll from './components/scroll/scroll.vue'
@@ -13,6 +14,7 @@ import Demol from './components/bottomTab.vue'
 import Address from './components/address.vue'
 import Login from './pages/login.vue'
 import Home from './pages/index.vue'
+import Upload from './pages/upload.vue'
 import AddGoods from './pages/addGoods.vue'
 import AddShop from './pages/addShop.vue'
 import AdminSetting from './pages/adminSetting.vue'
@@ -83,6 +85,11 @@ const router = new Router({
         name:'UserList',
         component: UserList,
       }]
+    },
+    {
+      path:'/upload',
+			name:'Upload',
+			component: Upload,
     },
     {
       path:'/login',

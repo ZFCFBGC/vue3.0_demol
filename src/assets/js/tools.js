@@ -229,13 +229,13 @@ var replaceChars = (str,length,fromBegin,mask)=>{
 // 	var xy = obj.getBoundingClientRect()
 // 	var top = xy.top-document.documentElement.clientTop+document.documentElement.scrollTop
 // }
-module.exports = {
-  phonevalid: phonevalid,
-  validNumber: validNumber,
-  trimvalid: trimvalid,
-  getDistance: getDistance,
-  getSystem: getSystem,
-  formatTime: formatTime,
-  number_format:number_format,
-  formatEnglishTime:formatEnglishTime
+export default {
+  phonevalid,
+  validNumber,
+  trimvalid,
+  getDistance,
+  getSystem,
+  formatTime,
+  number_format,
+  formatEnglishTime
 }

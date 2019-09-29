@@ -30,7 +30,8 @@ module.exports = {
     disableHostCheck: true,
     https: false,
     hotOnly: false,
-    proxy: "http://elm.cangdu.org",
+    proxy: "http://www.shuzhiyun.com/",
+    // "http://elm.cangdu.org",
     before: app => {}
   }
 };

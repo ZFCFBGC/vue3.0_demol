@@ -26,6 +26,7 @@
 <script>
 import headTop from "../components/headTop.vue";
 import bottomTab from "../components/bottomTab.vue";
+import tools from "../assets/js/tools.js"
 export default {
   data() {
     return {
@@ -40,7 +41,9 @@ export default {
     bottomTab
   },
   created() {},
-  mounted() {},
+  mounted() {
+    console.log('123',tools.phonevalid(1817993047))
+  },
   methods: {}
 };
 </script>

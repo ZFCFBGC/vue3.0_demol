@@ -9,9 +9,15 @@ import "./assets/css/main.less";
 
 import VueScroller from "vue-scroller"
 Vue.use(VueScroller);
+import Vant from 'vant';
+import 'vant/lib/index.css';
+
+Vue.use(Vant);
+
 import "element-ui/lib/theme-chalk/index.css";
 import {
   Button,
+  Upload,
   Input,
   Dialog,
   Menu,
@@ -46,6 +52,7 @@ Vue.use(Table)
 Vue.use(TableColumn)
 Vue.use(Select)
 Vue.use(Option)
+Vue.use(Upload)
 Vue.prototype.$request = request;
 Vue.prototype.$axios = axios;
 Vue.config.productionTip = false;

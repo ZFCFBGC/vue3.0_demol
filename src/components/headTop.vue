@@ -23,7 +23,10 @@ export default {
   },
   data() {
     return {
-      show: true
+      show: true,
+      item:{
+        id:1
+      }
     };
   },
   created() {
